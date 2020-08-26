@@ -13,7 +13,7 @@ public class ManagerService extends Reimbursement{
 	//list all - select all from reimb table
 	
 	
-	//filter requests by status (approved or pending)
+	//filter requests by status 
 	
 	
 	
