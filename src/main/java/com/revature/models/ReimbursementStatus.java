@@ -1,9 +1,28 @@
 package com.revature.models;
 
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="reimbursement_status")
 public class ReimbursementStatus {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="reimb_status_id")
 	private int reimbStatusId;
+	@Column(name="reimb_status")
 	private String reimbStatus;
+	@OneToMany(mappedBy="reimbStatusId", fetch=FetchType.EAGER)
+	private List<ReimbursementStatus> rs;
 	
 	
 	@Override
