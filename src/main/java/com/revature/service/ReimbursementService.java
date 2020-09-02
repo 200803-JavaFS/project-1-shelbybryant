@@ -2,19 +2,21 @@ package com.revature.service;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.revature.daos.ReimbursementDAO;
 import com.revature.models.Reimbursement;
+import com.revature.models.User;
 
-public class EmployeeService {
+public class ReimbursementService {
 
-	ReimbursementDAO rDao = new ReimbursementDAO();
-	
-	//login
-	
-	
+	private static final Logger log = LogManager.getLogger(ReimbursementService.class);
+	private static ReimbursementDAO rDao = new ReimbursementDAO();
 	
 	//view past tickets
 	public List<Reimbursement> findAll() {
+		log.info("Getting all the reimbursements!");
 		return rDao.findAll();
 	}
 	
@@ -33,7 +35,10 @@ public class EmployeeService {
 	public Reimbursement viewByStatusId(int statusId) {
 		return rDao.findByStatusId(statusId);
 	}
-	//must automatically set the reimb_id to pending
 	
-	
+	public List<Reimbursement> getAllByAuthor(User author) {
+		log.info("Getting all the reimbursements by the author of " + author);
+		return rDao.getAllByAuthor(author);
+		
+	}
 }

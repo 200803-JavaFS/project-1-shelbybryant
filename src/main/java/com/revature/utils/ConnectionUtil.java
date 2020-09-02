@@ -20,4 +20,13 @@ public class ConnectionUtil {
 		
 		return DriverManager.getConnection(url, username, password);
 	}
+	
+//	public static void main(String[] args) {
+//		
+//		try(Connection conn = ConnectionUtil.getConnection()){
+//			System.out.println("connection successful");
+//		} catch(SQLException e) {
+//			e.printStackTrace();
+//		}
+//	}
 }

@@ -1,21 +1,23 @@
 package com.revature.web;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Arrays;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.revature.controllers.EmployeeController;
-import com.revature.controllers.ManagerController;
+import com.revature.controllers.LoginController;
+import com.revature.service.ReimbursementService;
+
 
 public class MasterServlet extends HttpServlet{
 
-	private static ManagerController mc = new ManagerController();
-	private static EmployeeController ec = new EmployeeController();
+
+	private static final long serialVersionUID = 1L;
+
+	private static LoginController lc = new LoginController();
+	private static ReimbursementService rs = new ReimbursementService();
 	
 	public MasterServlet() {
 		super();
@@ -25,33 +27,35 @@ public class MasterServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		res.setContentType("application/json"); //by default, tom cat will send back a successful status code if it find a servlet method
 		//because all request will hit this method, we will default to not found and the override for success
-		res.setStatus(404);
+		res.setStatus(400);
 		
-		final String URI = req.getRequestURI().replace("/project-1-shelbybryant/", "");
-		
+		final String URI = req.getRequestURI().replace("/project1/", "");
 		String[] portions = URI.split("/"); //going to section the URI
-		System.out.println(Arrays.toString(portions)); //to see how it looks
 		
+		if (portions.length == 0) {
+			req.getRequestDispatcher("index.html").forward(req, res);
+		}
+
 		try {
-			switch(portions[0]) {
-			case "reimbursement":
-				if(req.getMethod().equals("GET")) {
-					if(portions.length == 2) {
-						int reimbId = Integer.parseInt(portions[1]);
-						mc.getReimbursement(res, reimbId);
-					} else if (portions.length == 1) {
-						mc.getAllReimbursements(res);
-					}
-				} else if (req.getMethod().equals("POST")) {
-					ec.addReimbursement(req, res);	
-				}
-			
+			switch (portions[0]) {
+				case "login":
+					lc.login(req, res);
+					break;
+				case "logout":
+					lc.logout(req, res);
+					break;
+				case "addTicket":
+					//rs.addRequest(reimb);
+				default:
+					System.out.println("The option you chose was not offered.");
+						
 			}
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
-			res.getWriter().print("The id you provided is not an integer");
-			res.setStatus(404);
+			res.setStatus(400);
 		}
+		
+		
 
 		
 		

@@ -7,7 +7,7 @@
 	<session-factory>
 		<property name="hibernate.connection.username">postgres</property>
 		<property name="hibernate.connection.password">password</property>
-		<property name="hibernate.connection.url">jdbc:postgresql://javatraining.cyq0oy2vijrb.us-east-2.rds.amazonaws.com:5432/postgres</property>
+		<property name="hibernate.connection.url">jdbc:postgresql://javatraining.cyq0oy2vijrb.us-east-2.rds.amazonaws.com:5432/project1</property>
 		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
 		<!-- additional hibernate properties -->
 		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
@@ -17,11 +17,11 @@
 		<property name="hibernate.hbm2ddl.auto">update</property>
 		
 		<!-- now we need our mappings -->
-		<mapping class="com.revature.models.Director"/>
-		<mapping class="com.revature.models.Movie"/>
-		<mapping resource="Character.hbm.xml"/>
-		
-		
+		<mapping class="com.revature.models.User"/>
+		<mapping class="com.revature.models.UserRoles"/>
+		<mapping class="com.revature.models.Reimbursement"/>
+		<mapping class="com.revature.models.ReimbursementStatus"/>
+		<mapping class="com.revature.models.ReimbursementType"/>
 	</session-factory>
 
 

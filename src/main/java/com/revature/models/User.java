@@ -15,25 +15,31 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="users")
-public class User {
+public class User{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="user_id")
 	private int userId;
-	@Column(name="username")
+	
+	@Column(name="username", nullable=false, unique=true)
 	private String username;
-	@Column(name="user_password")
+	
+	@Column(name="user_password", nullable=false)
 	private String password;
-	@Column(name="user_first_name")
+	
+	@Column(name="user_first_name", nullable=false)
 	private String firstName;
-	@Column(name="user_last_name")
+	
+	@Column(name="user_last_name", nullable=false)
 	private String lastName;
-	@Column(name="user_email")
+	
+	@Column(name="user_email", nullable=false, unique=true)
 	private String email;
+	
 	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-	@JoinColumn(name="user_role_id")
-	private User userRoleId;
+	@JoinColumn(name="user_role_id_fk", referencedColumnName="user_role_id", nullable=false)
+	private UserRoles userRoleId;
 
 	
 
@@ -191,13 +197,13 @@ public class User {
 
 
 
-	public User getUserRoleId() {
+	public UserRoles getUserRoleId() {
 		return userRoleId;
 	}
 
 
 
-	public void setUserRoleId(User userRoleId) {
+	public void setUserRoleId(UserRoles userRoleId) {
 		this.userRoleId = userRoleId;
 	}
 

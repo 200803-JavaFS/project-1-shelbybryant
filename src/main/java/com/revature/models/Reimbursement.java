@@ -19,32 +19,40 @@ import javax.persistence.Table;
 @Table(name="reimbursement")
 public class Reimbursement {
 
+	private static final long serialVersionUDI = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="reimb_id")
 	private int reimbId;
-	@Column(name="reimb_amount")
+	
+	@Column(name="reimb_amount", nullable=false)
 	private double reimbAmount;
+	
 	@Column(name="reimb_description")
 	private String reimbDescription;
-	@OneToOne
-	@MapsId
-	@JoinColumn(name="user_id")
-	private int reimbAuthor;
-	@OneToOne
-	@MapsId
-	@JoinColumn(name="user_id")
-	private int reimbResolver;
-	@Column(name="reimb_submitted")
+	
+	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@JoinColumn(name="reimb_author")
+	private User reimbAuthorId;
+	
+	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@JoinColumn(name="reimb_resolver")
+	private User reimbResolverId;
+	
+	@Column(name="reimb_submitted", nullable=false)
 	private Timestamp reimbSubmitted;
+	
 	@Column(name="reimb_resolved")
 	private Timestamp reimbResolved;
+	
 	//create objects for the foreign keys
 	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-	@JoinColumn(name="reimb_status_id")
+	@JoinColumn(name="reimb_status_id_fk", nullable=false)
 	private ReimbursementStatus reimbStatusId;
+	
 	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
-	@JoinColumn(name="reimb_type_id")
+	@JoinColumn(name="reimb_type_id_fk", nullable=false)
 	private ReimbursementType reimbTypeId;
 	
 	
@@ -52,54 +60,125 @@ public class Reimbursement {
 		super();
 		
 	}
+
 	
 	
 	
+
+	public Reimbursement(double reimbAmount, String reimbDescription, User reimbAuthorId, User reimbResolverId,
+			ReimbursementStatus reimbStatusId, ReimbursementType reimbTypeId) {
+		super();
+		this.reimbAmount = reimbAmount;
+		this.reimbDescription = reimbDescription;
+		this.reimbAuthorId = reimbAuthorId;
+		this.reimbResolverId = reimbResolverId;
+		this.reimbStatusId = reimbStatusId;
+		this.reimbTypeId = reimbTypeId;
+	}
+
+
+
+
+
+	public Reimbursement(double reimbAmount, String reimbDescription, User reimbAuthorId, User reimbResolverId,
+			Timestamp reimbSubmitted, Timestamp reimbResolved, ReimbursementStatus reimbStatusId,
+			ReimbursementType reimbTypeId) {
+		super();
+		this.reimbAmount = reimbAmount;
+		this.reimbDescription = reimbDescription;
+		this.reimbAuthorId = reimbAuthorId;
+		this.reimbResolverId = reimbResolverId;
+		this.reimbSubmitted = reimbSubmitted;
+		this.reimbResolved = reimbResolved;
+		this.reimbStatusId = reimbStatusId;
+		this.reimbTypeId = reimbTypeId;
+	}
+
+
+
+
+
+	public Reimbursement(int reimbId, double reimbAmount, String reimbDescription, User reimbAuthorId,
+			User reimbResolverId, Timestamp reimbSubmitted, Timestamp reimbResolved, ReimbursementStatus reimbStatusId,
+			ReimbursementType reimbTypeId) {
+		super();
+		this.reimbId = reimbId;
+		this.reimbAmount = reimbAmount;
+		this.reimbDescription = reimbDescription;
+		this.reimbAuthorId = reimbAuthorId;
+		this.reimbResolverId = reimbResolverId;
+		this.reimbSubmitted = reimbSubmitted;
+		this.reimbResolved = reimbResolved;
+		this.reimbStatusId = reimbStatusId;
+		this.reimbTypeId = reimbTypeId;
+	}
+
+
+
+
+
 	public int getReimbId() {
 		return reimbId;
 	}
+
+
 	public void setReimbId(int reimbId) {
 		this.reimbId = reimbId;
 	}
+
+
 	public double getReimbAmount() {
 		return reimbAmount;
 	}
+
+
 	public void setReimbAmount(double reimbAmount) {
 		this.reimbAmount = reimbAmount;
 	}
+
+
 	public String getReimbDescription() {
 		return reimbDescription;
 	}
+
+
 	public void setReimbDescription(String reimbDescription) {
 		this.reimbDescription = reimbDescription;
 	}
-	public int getReimbAuthor() {
-		return reimbAuthor;
+
+
+	public User getReimbAuthorId() {
+		return reimbAuthorId;
 	}
-	public void setReimbAuthor(int reimbAuthor) {
-		this.reimbAuthor = reimbAuthor;
+
+
+	public void setReimbAuthorId(User reimbAuthorId) {
+		this.reimbAuthorId = reimbAuthorId;
 	}
-	public int getReimbResolver() {
-		return reimbResolver;
+
+
+	public User getReimbResolverId() {
+		return reimbResolverId;
 	}
-	public void setReimbResolver(int reimbResolver) {
-		this.reimbResolver = reimbResolver;
+
+
+	public void setReimbResolverId(User reimbResolverId) {
+		this.reimbResolverId = reimbResolverId;
 	}
+
 
 	public Timestamp getReimbSubmitted() {
 		return reimbSubmitted;
 	}
 
+
 	public void setReimbSubmitted(Timestamp reimbSubmitted) {
 		this.reimbSubmitted = reimbSubmitted;
 	}
 
+
 	public Timestamp getReimbResolved() {
 		return reimbResolved;
-	}
-
-	public void setReimb_resolved(Timestamp reimbResolved) {
-		this.reimbResolved = reimbResolved;
 	}
 
 
@@ -108,11 +187,9 @@ public class Reimbursement {
 	}
 
 
-
 	public ReimbursementStatus getReimbStatusId() {
 		return reimbStatusId;
 	}
-
 
 
 	public void setReimbStatusId(ReimbursementStatus reimbStatusId) {
@@ -120,16 +197,99 @@ public class Reimbursement {
 	}
 
 
-
 	public ReimbursementType getReimbTypeId() {
 		return reimbTypeId;
 	}
 
 
-
 	public void setReimbTypeId(ReimbursementType reimbTypeId) {
 		this.reimbTypeId = reimbTypeId;
 	}
+
+
+	public static long getSerialversionudi() {
+		return serialVersionUDI;
+	}
+
+
+
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		long temp;
+		temp = Double.doubleToLongBits(reimbAmount);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((reimbAuthorId == null) ? 0 : reimbAuthorId.hashCode());
+		result = prime * result + ((reimbDescription == null) ? 0 : reimbDescription.hashCode());
+		result = prime * result + reimbId;
+		result = prime * result + ((reimbResolved == null) ? 0 : reimbResolved.hashCode());
+		result = prime * result + ((reimbResolverId == null) ? 0 : reimbResolverId.hashCode());
+		result = prime * result + ((reimbStatusId == null) ? 0 : reimbStatusId.hashCode());
+		result = prime * result + ((reimbSubmitted == null) ? 0 : reimbSubmitted.hashCode());
+		result = prime * result + ((reimbTypeId == null) ? 0 : reimbTypeId.hashCode());
+		return result;
+	}
+
+
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Reimbursement other = (Reimbursement) obj;
+		if (Double.doubleToLongBits(reimbAmount) != Double.doubleToLongBits(other.reimbAmount))
+			return false;
+		if (reimbAuthorId == null) {
+			if (other.reimbAuthorId != null)
+				return false;
+		} else if (!reimbAuthorId.equals(other.reimbAuthorId))
+			return false;
+		if (reimbDescription == null) {
+			if (other.reimbDescription != null)
+				return false;
+		} else if (!reimbDescription.equals(other.reimbDescription))
+			return false;
+		if (reimbId != other.reimbId)
+			return false;
+		if (reimbResolved == null) {
+			if (other.reimbResolved != null)
+				return false;
+		} else if (!reimbResolved.equals(other.reimbResolved))
+			return false;
+		if (reimbResolverId == null) {
+			if (other.reimbResolverId != null)
+				return false;
+		} else if (!reimbResolverId.equals(other.reimbResolverId))
+			return false;
+		if (reimbStatusId == null) {
+			if (other.reimbStatusId != null)
+				return false;
+		} else if (!reimbStatusId.equals(other.reimbStatusId))
+			return false;
+		if (reimbSubmitted == null) {
+			if (other.reimbSubmitted != null)
+				return false;
+		} else if (!reimbSubmitted.equals(other.reimbSubmitted))
+			return false;
+		if (reimbTypeId == null) {
+			if (other.reimbTypeId != null)
+				return false;
+		} else if (!reimbTypeId.equals(other.reimbTypeId))
+			return false;
+		return true;
+	}
+	
+	
+
 
 	
 

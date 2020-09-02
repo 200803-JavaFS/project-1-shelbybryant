@@ -6,6 +6,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
 import com.revature.models.Reimbursement;
+import com.revature.models.User;
 import com.revature.utils.HibernateUtil;
 
 public class ReimbursementDAO {
@@ -62,5 +63,12 @@ public class ReimbursementDAO {
 		Session session = HibernateUtil.getSession();
 		Reimbursement reimb = session.get(Reimbursement.class, statusId);
 		return reimb;
+	}
+	
+	public List<Reimbursement> getAllByAuthor(User author) {
+		Session session = HibernateUtil.getSession();
+		List<Reimbursement> list = session.createQuery("FROM Reimbursement WHERE reimbAuthor = " +
+		author.getUserId(), Reimbursement.class).list();
+		return list;
 	}
 }

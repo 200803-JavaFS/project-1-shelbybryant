@@ -31,6 +31,22 @@ public class ReimbursementType {
 		
 	}
 	
+	
+	public ReimbursementType(String reimbType, List<ReimbursementType> rt) {
+		super();
+		this.reimbType = reimbType;
+		this.rt = rt;
+	}
+
+
+	public ReimbursementType(int reimbTypeId, String reimbType, List<ReimbursementType> rt) {
+		super();
+		this.reimbTypeId = reimbTypeId;
+		this.reimbType = reimbType;
+		this.rt = rt;
+	}
+
+
 	public int getReimbTypeId() {
 		return reimbTypeId;
 	}
@@ -47,6 +63,42 @@ public class ReimbursementType {
 	@Override
 	public String toString() {
 		return "ReimbursementType [reimbTypeId=" + reimbTypeId + ", reimbType=" + reimbType + "]";
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((reimbType == null) ? 0 : reimbType.hashCode());
+		result = prime * result + reimbTypeId;
+		result = prime * result + ((rt == null) ? 0 : rt.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ReimbursementType other = (ReimbursementType) obj;
+		if (reimbType == null) {
+			if (other.reimbType != null)
+				return false;
+		} else if (!reimbType.equals(other.reimbType))
+			return false;
+		if (reimbTypeId != other.reimbTypeId)
+			return false;
+		if (rt == null) {
+			if (other.rt != null)
+				return false;
+		} else if (!rt.equals(other.rt))
+			return false;
+		return true;
 	}
 	
 	

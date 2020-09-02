@@ -12,7 +12,7 @@ public class UserDAO {
 
 	public List<User> findAll() {
 		Session session = HibernateUtil.getSession();
-		List<User> userList = session.createQuery("FROM users").list();
+		List<User> userList = session.createQuery("from User").list();
 		return userList;
 	}
 	
@@ -47,7 +47,7 @@ public class UserDAO {
 	public boolean deletById(int userId) {
 		Session session = HibernateUtil.getSession();
 		try {
-			session.createQuery("DELTE FROM user WHERE user_id" + userId);
+			session.createQuery("delete from user where user_id = " + userId);
 			return true;
 		} catch (HibernateException e) {
 			e.printStackTrace();
@@ -55,8 +55,12 @@ public class UserDAO {
 		}
 	}
 	
-//	public User login(int userId, String password) {
-//		
-//	}
+	public User getByUsername(String username) {
+		Session session = HibernateUtil.getSession();
+		String query = "from User where username = " + "'" + username + "'";
+		List<User> list = session.createQuery(query).list();
+		return list.get(0);
+	}
 	
+
 }
