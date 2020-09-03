@@ -8,7 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.revature.controllers.LoginController;
+import com.revature.controllers.ReimbursementController;
+import com.revature.controllers.UserController;
+import com.revature.models.User;
+import com.revature.models.UserRoles;
 import com.revature.service.ReimbursementService;
+import com.revature.service.UserService;
 
 
 public class MasterServlet extends HttpServlet{
@@ -18,6 +23,9 @@ public class MasterServlet extends HttpServlet{
 
 	private static LoginController lc = new LoginController();
 	private static ReimbursementService rs = new ReimbursementService();
+	private static UserService us = new UserService();
+	private static UserController uc = new UserController();
+	private static ReimbursementController rc = new ReimbursementController();
 	
 	public MasterServlet() {
 		super();
@@ -32,26 +40,62 @@ public class MasterServlet extends HttpServlet{
 		final String URI = req.getRequestURI().replace("/project1/", "");
 		String[] portions = URI.split("/"); //going to section the URI
 		
-		if (portions.length == 0) {
-			req.getRequestDispatcher("index.html").forward(req, res);
-		}
 
 		try {
 			switch (portions[0]) {
 				case "login":
 					lc.login(req, res);
 					break;
+				case "success":
+					if(req.getSession(false) != null && (boolean) req.getSession().getAttribute("loggedin")) {
+						User user = (User) req.getSession().getAttribute("user");
+						
+						user = us.getByUsername(user.getUsername());
+						UserRoles ur = user.getUserRoleId();
+						System.out.println(ur);
+						
+						if(req.getMethod().equals("GET")) {
+							uc.setUserRole(req, res, user);
+						}	
+					}
+					break;
 				case "logout":
 					lc.logout(req, res);
 					break;
-				case "addTicket":
-					//rs.addRequest(reimb);
+				case "reimbursements":
+					System.out.println("in reimbursements");
+					if (portions.length == 2) {
+						int id = Integer.parseInt(portions[1]);
+						rc.findByAuthorId(res, id);
+					} else {
+						rc.getAllReimb(res);
+					}
+					break;
+				case "ticket":
+					System.out.println("adding a ticket");
+					rc.addTicket(req, res);
+					break;
+				case "status":
+					System.out.println("updating a status");
+					rc.updateStatus(req, res);
+					break;
+				case "filter":
+					System.out.println("filtering by status");
+					if (portions.length == 2) {
+						int statusId = Integer.parseInt(portions[1]);
+						System.out.println(statusId);
+						rc.getAllReimbByStatus(res, statusId);
+					} else {
+						rc.getAllReimb(res);
+					}
+					break;
 				default:
 					System.out.println("The option you chose was not offered.");
 						
 			}
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
+			res.getWriter().println("The id you provided is not an integer");
 			res.setStatus(400);
 		}
 		

@@ -17,6 +17,8 @@ import javax.persistence.Table;
 @Table(name="users")
 public class User{
 
+	private static final long serialVersionUDI = 1L;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="user_id")
@@ -37,7 +39,7 @@ public class User{
 	@Column(name="user_email", nullable=false, unique=true)
 	private String email;
 	
-	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="user_role_id_fk", referencedColumnName="user_role_id", nullable=false)
 	private UserRoles userRoleId;
 
@@ -205,6 +207,12 @@ public class User{
 
 	public void setUserRoleId(UserRoles userRoleId) {
 		this.userRoleId = userRoleId;
+	}
+
+
+
+	public static long getSerialversionudi() {
+		return serialVersionUDI;
 	}
 
 

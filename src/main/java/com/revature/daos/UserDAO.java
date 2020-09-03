@@ -47,7 +47,7 @@ public class UserDAO {
 	public boolean deletById(int userId) {
 		Session session = HibernateUtil.getSession();
 		try {
-			session.createQuery("delete from user where user_id = " + userId);
+			session.createQuery("delete from user where user_id = " + userId + "'");
 			return true;
 		} catch (HibernateException e) {
 			e.printStackTrace();
@@ -62,5 +62,6 @@ public class UserDAO {
 		return list.get(0);
 	}
 	
+
 
 }

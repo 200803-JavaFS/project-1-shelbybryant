@@ -1,28 +1,29 @@
 package com.revature.models;
 
-import java.util.List;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+
 import javax.persistence.Table;
 
 @Entity
 @Table(name="reimbursement_status")
 public class ReimbursementStatus {
 
+	private static final long serialVersionUDI = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="reimb_status_id")
 	private int reimbStatusId;
 	@Column(name="reimb_status")
 	private String reimbStatus;
-	@OneToMany(mappedBy="reimbStatusId", fetch=FetchType.EAGER)
-	private List<ReimbursementStatus> rs;
+
 	
 	
 	@Override
@@ -32,23 +33,19 @@ public class ReimbursementStatus {
 
 	public ReimbursementStatus() {
 		super();
-	
 	}
 	
-	
-	
-	public ReimbursementStatus(String reimbStatus, List<ReimbursementStatus> rs) {
+	public ReimbursementStatus(String reimbStatus) {
 		super();
 		this.reimbStatus = reimbStatus;
-		this.rs = rs;
 	}
 
-	public ReimbursementStatus(int reimbStatusId, String reimbStatus, List<ReimbursementStatus> rs) {
+	public ReimbursementStatus(int reimbStatusId, String reimbStatus) {
 		super();
 		this.reimbStatusId = reimbStatusId;
 		this.reimbStatus = reimbStatus;
-		this.rs = rs;
 	}
+
 
 	public int getReimbStatusId() {
 		return reimbStatusId;
@@ -69,7 +66,7 @@ public class ReimbursementStatus {
 		int result = 1;
 		result = prime * result + ((reimbStatus == null) ? 0 : reimbStatus.hashCode());
 		result = prime * result + reimbStatusId;
-		result = prime * result + ((rs == null) ? 0 : rs.hashCode());
+		
 		return result;
 	}
 
@@ -89,12 +86,12 @@ public class ReimbursementStatus {
 			return false;
 		if (reimbStatusId != other.reimbStatusId)
 			return false;
-		if (rs == null) {
-			if (other.rs != null)
-				return false;
-		} else if (!rs.equals(other.rs))
-			return false;
+	
 		return true;
+	}
+
+	public static long getSerialversionudi() {
+		return serialVersionUDI;
 	}
 	
 	

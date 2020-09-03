@@ -1,28 +1,29 @@
 package com.revature.models;
 
-import java.util.List;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+
 import javax.persistence.Table;
 
 @Entity
 @Table(name="reimbursement_type")
 public class ReimbursementType {
 
+	private static final long serialVersionUDI = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="reimb_type_id")
 	private int reimbTypeId;
 	@Column(name="reimb_type")
 	private String reimbType;
-	@OneToMany(mappedBy="reimbTypeId", fetch=FetchType.EAGER)
-	private List<ReimbursementType> rt;
+
 	
 	
 	
@@ -32,19 +33,15 @@ public class ReimbursementType {
 	}
 	
 	
-	public ReimbursementType(String reimbType, List<ReimbursementType> rt) {
-		super();
-		this.reimbType = reimbType;
-		this.rt = rt;
-	}
-
-
-	public ReimbursementType(int reimbTypeId, String reimbType, List<ReimbursementType> rt) {
+	public ReimbursementType(int reimbTypeId, String reimbType) {
 		super();
 		this.reimbTypeId = reimbTypeId;
 		this.reimbType = reimbType;
-		this.rt = rt;
 	}
+
+
+
+
 
 
 	public int getReimbTypeId() {
@@ -72,7 +69,7 @@ public class ReimbursementType {
 		int result = 1;
 		result = prime * result + ((reimbType == null) ? 0 : reimbType.hashCode());
 		result = prime * result + reimbTypeId;
-		result = prime * result + ((rt == null) ? 0 : rt.hashCode());
+		
 		return result;
 	}
 
@@ -93,12 +90,13 @@ public class ReimbursementType {
 			return false;
 		if (reimbTypeId != other.reimbTypeId)
 			return false;
-		if (rt == null) {
-			if (other.rt != null)
-				return false;
-		} else if (!rt.equals(other.rt))
-			return false;
+
 		return true;
+	}
+
+
+	public static long getSerialversionudi() {
+		return serialVersionUDI;
 	}
 	
 	

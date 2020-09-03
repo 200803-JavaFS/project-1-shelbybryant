@@ -11,9 +11,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table(name="reimbursement")
@@ -32,28 +33,30 @@ public class Reimbursement {
 	@Column(name="reimb_description")
 	private String reimbDescription;
 	
-	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="reimb_author")
 	private User reimbAuthorId;
-	
-	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="reimb_resolver")
 	private User reimbResolverId;
 	
+	@CreationTimestamp
 	@Column(name="reimb_submitted", nullable=false)
 	private Timestamp reimbSubmitted;
 	
+	@UpdateTimestamp
 	@Column(name="reimb_resolved")
 	private Timestamp reimbResolved;
 	
 	//create objects for the foreign keys
-	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="reimb_status_id_fk", nullable=false)
-	private ReimbursementStatus reimbStatusId;
+	private ReimbursementStatus reimbStatus;
 	
-	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	@ManyToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="reimb_type_id_fk", nullable=false)
-	private ReimbursementType reimbTypeId;
+	private ReimbursementType reimbType;
 	
 	
 	public Reimbursement() {
@@ -61,28 +64,21 @@ public class Reimbursement {
 		
 	}
 
-	
-	
-	
 
-	public Reimbursement(double reimbAmount, String reimbDescription, User reimbAuthorId, User reimbResolverId,
-			ReimbursementStatus reimbStatusId, ReimbursementType reimbTypeId) {
+	public Reimbursement(double reimbAmount, String reimbDescription, User reimbAuthorId,
+			ReimbursementStatus reimbStatus, ReimbursementType reimbType) {
 		super();
 		this.reimbAmount = reimbAmount;
 		this.reimbDescription = reimbDescription;
 		this.reimbAuthorId = reimbAuthorId;
-		this.reimbResolverId = reimbResolverId;
-		this.reimbStatusId = reimbStatusId;
-		this.reimbTypeId = reimbTypeId;
+		this.reimbStatus = reimbStatus;
+		this.reimbType = reimbType;
 	}
 
 
-
-
-
 	public Reimbursement(double reimbAmount, String reimbDescription, User reimbAuthorId, User reimbResolverId,
-			Timestamp reimbSubmitted, Timestamp reimbResolved, ReimbursementStatus reimbStatusId,
-			ReimbursementType reimbTypeId) {
+			Timestamp reimbSubmitted, Timestamp reimbResolved, ReimbursementStatus reimbStatus,
+			ReimbursementType reimbType) {
 		super();
 		this.reimbAmount = reimbAmount;
 		this.reimbDescription = reimbDescription;
@@ -90,17 +86,15 @@ public class Reimbursement {
 		this.reimbResolverId = reimbResolverId;
 		this.reimbSubmitted = reimbSubmitted;
 		this.reimbResolved = reimbResolved;
-		this.reimbStatusId = reimbStatusId;
-		this.reimbTypeId = reimbTypeId;
+		this.reimbStatus = reimbStatus;
+		this.reimbType = reimbType;
 	}
 
 
 
-
-
 	public Reimbursement(int reimbId, double reimbAmount, String reimbDescription, User reimbAuthorId,
-			User reimbResolverId, Timestamp reimbSubmitted, Timestamp reimbResolved, ReimbursementStatus reimbStatusId,
-			ReimbursementType reimbTypeId) {
+			User reimbResolverId, Timestamp reimbSubmitted, Timestamp reimbResolved, ReimbursementStatus reimbStatus,
+			ReimbursementType reimbType) {
 		super();
 		this.reimbId = reimbId;
 		this.reimbAmount = reimbAmount;
@@ -109,12 +103,18 @@ public class Reimbursement {
 		this.reimbResolverId = reimbResolverId;
 		this.reimbSubmitted = reimbSubmitted;
 		this.reimbResolved = reimbResolved;
-		this.reimbStatusId = reimbStatusId;
-		this.reimbTypeId = reimbTypeId;
+		this.reimbStatus = reimbStatus;
+		this.reimbType = reimbType;
 	}
 
 
-
+	@Override
+	public String toString() {
+		return "Reimbursement [reimbId=" + reimbId + ", reimbAmount=" + reimbAmount + ", reimbDescription="
+				+ reimbDescription + ", reimbAuthorId=" + reimbAuthorId + ", reimbResolverId=" + reimbResolverId
+				+ ", reimbSubmitted=" + reimbSubmitted + ", reimbResolved=" + reimbResolved + ", reimbStatus="
+				+ reimbStatus + ", reimbType=" + reimbType + "]";
+	}
 
 
 	public int getReimbId() {
@@ -187,32 +187,29 @@ public class Reimbursement {
 	}
 
 
-	public ReimbursementStatus getReimbStatusId() {
-		return reimbStatusId;
+	public ReimbursementStatus getReimbStatus() {
+		return reimbStatus;
 	}
 
 
-	public void setReimbStatusId(ReimbursementStatus reimbStatusId) {
-		this.reimbStatusId = reimbStatusId;
+	public void setReimbStatus(ReimbursementStatus reimbStatus) {
+		this.reimbStatus = reimbStatus;
 	}
 
 
-	public ReimbursementType getReimbTypeId() {
-		return reimbTypeId;
+	public ReimbursementType getReimbType() {
+		return reimbType;
 	}
 
 
-	public void setReimbTypeId(ReimbursementType reimbTypeId) {
-		this.reimbTypeId = reimbTypeId;
+	public void setReimbType(ReimbursementType reimbType) {
+		this.reimbType = reimbType;
 	}
 
 
 	public static long getSerialversionudi() {
 		return serialVersionUDI;
 	}
-
-
-
 
 
 	@Override
@@ -227,14 +224,11 @@ public class Reimbursement {
 		result = prime * result + reimbId;
 		result = prime * result + ((reimbResolved == null) ? 0 : reimbResolved.hashCode());
 		result = prime * result + ((reimbResolverId == null) ? 0 : reimbResolverId.hashCode());
-		result = prime * result + ((reimbStatusId == null) ? 0 : reimbStatusId.hashCode());
+		result = prime * result + ((reimbStatus == null) ? 0 : reimbStatus.hashCode());
 		result = prime * result + ((reimbSubmitted == null) ? 0 : reimbSubmitted.hashCode());
-		result = prime * result + ((reimbTypeId == null) ? 0 : reimbTypeId.hashCode());
+		result = prime * result + ((reimbType == null) ? 0 : reimbType.hashCode());
 		return result;
 	}
-
-
-
 
 
 	@Override
@@ -270,24 +264,28 @@ public class Reimbursement {
 				return false;
 		} else if (!reimbResolverId.equals(other.reimbResolverId))
 			return false;
-		if (reimbStatusId == null) {
-			if (other.reimbStatusId != null)
+		if (reimbStatus == null) {
+			if (other.reimbStatus != null)
 				return false;
-		} else if (!reimbStatusId.equals(other.reimbStatusId))
+		} else if (!reimbStatus.equals(other.reimbStatus))
 			return false;
 		if (reimbSubmitted == null) {
 			if (other.reimbSubmitted != null)
 				return false;
 		} else if (!reimbSubmitted.equals(other.reimbSubmitted))
 			return false;
-		if (reimbTypeId == null) {
-			if (other.reimbTypeId != null)
+		if (reimbType == null) {
+			if (other.reimbType != null)
 				return false;
-		} else if (!reimbTypeId.equals(other.reimbTypeId))
+		} else if (!reimbType.equals(other.reimbType))
 			return false;
 		return true;
 	}
-	
+
+
+
+
+
 	
 
 
