@@ -25,6 +25,7 @@ public class ReimbursementService {
 	
 	//add reimbursement request
 	public boolean addRequest(Reimbursement reimb) {
+		log.info("Adding the reimbursement ticket");
 		if (rDao.addReimbursement(reimb)) {
 			return true;
 		} else {
@@ -34,11 +35,12 @@ public class ReimbursementService {
 	}
 	
 	public List<Reimbursement> findByStatus(int statusId){
+		log.info("Finding the reimbursement by the status id of " + statusId);
 		return rDao.selectByStatus(statusId);
 	}
 	
 	public List<Reimbursement> getAllByAuthor(User author) {
-		log.info("Getting all the reimbursements by the author of " + author);
+		log.info("Getting all the reimbursements by the author of " + author.getUserId());
 		return rDao.getAllByAuthor(author);
 	}
 	
