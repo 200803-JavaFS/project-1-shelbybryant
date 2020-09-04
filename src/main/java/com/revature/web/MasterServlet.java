@@ -46,19 +46,19 @@ public class MasterServlet extends HttpServlet{
 				case "login":
 					lc.login(req, res);
 					break;
-				case "success":
-					if(req.getSession(false) != null && (boolean) req.getSession().getAttribute("loggedin")) {
-						User user = (User) req.getSession().getAttribute("user");
-						
-						user = us.getByUsername(user.getUsername());
-						UserRoles ur = user.getUserRoleId();
-						System.out.println(ur);
-						
-						if(req.getMethod().equals("GET")) {
-							uc.setUserRole(req, res, user);
-						}	
-					}
-					break;
+//				case "success":
+//					if(req.getSession(false) != null && (boolean) req.getSession().getAttribute("loggedin")) {
+//						User user = (User) req.getSession().getAttribute("user");
+//						
+//						user = us.getByUsername(user.getUsername());
+//						UserRoles ur = user.getUserRoleId();
+//						System.out.println(ur);
+//						
+//						if(req.getMethod().equals("GET")) {
+//							uc.setUserRole(req, res, user);
+//						}	
+//					}
+					//break;
 				case "logout":
 					lc.logout(req, res);
 					break;
