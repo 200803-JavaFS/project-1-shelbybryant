@@ -10,7 +10,7 @@
 
     <title>Employee Portal</title>
   </head>
-  <body>
+  <body style="background-color: #b7d7e8;">
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4">Employee Portal</h1>
@@ -19,8 +19,9 @@
       </div>      
       <br>
       <br>
-      <h3>Add a new reimbursement ticket</h3>
+      <h3 style="text-align:center">Add a new reimbursement ticket</h3>
       <div class="row" id="formdiv">
+        <div class="container">
           <div class="col-4-sm">
               <label class="label" for="reimbAmount">Reimbursement Amount</label>
               <input type="text" class="form-control" id="reimbAmount">
@@ -37,8 +38,10 @@
               <label class="label" for="reimbAuthor">Your User Id</label>
               <input type="text" class="form-control" id="reimbAuthor">
           </div>
-          <button id="addbtn" class="btn">Add Ticket</button>
-          <div class="row" id="adding-row"></div>
+          <button id="loginbtn" type="button" class="btn btn-primary">Add Ticket</button>
+          <div class="row" id="login-row"></div>
+        </div>
+      </div>
       </div>
            
 

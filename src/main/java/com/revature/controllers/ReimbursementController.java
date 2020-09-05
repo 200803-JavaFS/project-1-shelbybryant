@@ -121,7 +121,7 @@ public class ReimbursementController {
 		ReimbursementStatus reimbStatus = null;
 		if (status.equals("approved")) {
 			reimbStatus = new ReimbursementStatus(2, "approved");
-		} else if (status.equals("Denied")) {
+		} else if (status.equals("denied")) {
 			reimbStatus = new ReimbursementStatus(3, "denied");
 		}
 		

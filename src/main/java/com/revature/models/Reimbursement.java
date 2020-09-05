@@ -65,6 +65,37 @@ public class Reimbursement {
 	}
 
 
+
+
+
+	public Reimbursement(double reimbAmount, String reimbDescription, User reimbAuthorId, User reimbResolverId,
+			ReimbursementStatus reimbStatus, ReimbursementType reimbType) {
+		super();
+		this.reimbAmount = reimbAmount;
+		this.reimbDescription = reimbDescription;
+		this.reimbAuthorId = reimbAuthorId;
+		this.reimbResolverId = reimbResolverId;
+		this.reimbStatus = reimbStatus;
+		this.reimbType = reimbType;
+	}
+
+
+
+
+
+	public Reimbursement(int reimbId, double reimbAmount, String reimbDescription, User reimbAuthorId,
+			User reimbResolverId, ReimbursementStatus reimbStatus, ReimbursementType reimbType) {
+		super();
+		this.reimbId = reimbId;
+		this.reimbAmount = reimbAmount;
+		this.reimbDescription = reimbDescription;
+		this.reimbAuthorId = reimbAuthorId;
+		this.reimbResolverId = reimbResolverId;
+		this.reimbStatus = reimbStatus;
+		this.reimbType = reimbType;
+	}
+
+
 	public Reimbursement(double reimbAmount, String reimbDescription, User reimbAuthorId,
 			ReimbursementStatus reimbStatus, ReimbursementType reimbType) {
 		super();

@@ -30,6 +30,19 @@ public class UserRoles {
 		super();
 		
 	}
+	
+	
+	
+	
+	public UserRoles(int userRoleId, String userRole) {
+		super();
+		this.userRoleId = userRoleId;
+		this.userRole = userRole;
+	}
+
+
+
+
 	public int getUserRoleId() {
 		return userRoleId;
 	}

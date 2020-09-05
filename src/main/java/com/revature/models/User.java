@@ -52,6 +52,20 @@ public class User{
 
 
 
+	public User(int userId, String username, String password, String firstName, String lastName, String email,
+			UserRoles userRoleId) {
+		super();
+		this.userId = userId;
+		this.username = username;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.userRoleId = userRoleId;
+	}
+
+
+
 	public User(String username, String password, String firstName, String lastName, String email) {
 		super();
 		this.username = username;
@@ -71,6 +85,19 @@ public class User{
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
+	}
+
+
+
+	public User(String username, String password, String firstName, String lastName, String email,
+			UserRoles userRoleId) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.userRoleId = userRoleId;
 	}
 
 
