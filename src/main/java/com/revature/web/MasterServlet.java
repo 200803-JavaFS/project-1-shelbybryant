@@ -89,6 +89,16 @@ public class MasterServlet extends HttpServlet{
 						rc.getAllReimb(res);
 					}
 					break;
+				case "author":
+					System.out.println("finding reimb by author id");
+					if (portions.length == 2) {
+						int authorId = Integer.parseInt(portions[1]);
+						rc.findByAuthorId(res, authorId);
+						System.out.println("author id is " + authorId);
+					} else {
+						System.out.println("could not find reimb by that author id");
+					}
+					break;
 				default:
 					System.out.println("The option you chose was not offered.");
 						

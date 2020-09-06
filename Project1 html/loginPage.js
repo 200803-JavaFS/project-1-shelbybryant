@@ -24,9 +24,11 @@ async function loginFunc() {
             body: JSON.stringify(user),
             credentials: "include"
         });
+        console.log("server login response:", resp);
         if (resp.status === 200) {
-            console.log(resp)
             document.getElementById("login-row").innerText = "You have successfully logged in! YAY!";
+            //Send user to homepage
+            window.location = 'homePage.html';
         } else {
             document.getElementById("login-row").innerText = `Server Error. Responded with ${res.status} code.`;
         }
@@ -34,8 +36,8 @@ async function loginFunc() {
         console.log("\nFetch error:", e);
         document.getElementById("login-row").innerText = "Unexpected Server Error. Your login failed. Bummer."
     }
-    
-    
-    
+
+
+
 
 }
