@@ -1,25 +1,25 @@
 const url = "http://localhost:8080/project1/";
 
 document.getElementById("addbtn").addEventListener("click", addReimbFunc);
-document.getElementById("findbtn").addEventListener("click", findReimbFunch);
+document.getElementById("findbtn").addEventListener("click", findReimbFunc);
 
 
 async function addReimbFunc() {
     let reimbAmount = document.getElementById("reimbAmount").value;
     let reimbType = document.getElementById("reimbType").value;
-    let reimbDesc = document.getElementById("reimbDesc").value;
-    let reimbAuthor = document.getElementById("reimbAuthor").value;
+    let reimbDescription = document.getElementById("reimbDesc").value;
+    let reimbAuthorId = document.getElementById("reimbAuthor").value;
 
     console.log("reimbursement amount: ", reimbAmount);
     console.log("reimbursement type: ", reimbType);
-    console.log("reimbursement description: ", reimbDesc);
-    console.log("reimbursement author: ", reimbAuthor);
+    console.log("reimbursement description: ", reimbDescription);
+    console.log("reimbursement author: ", reimbAuthorId);
 
     let ticket = {
         reimbAmount,
         reimbType,
-        reimbDesc,
-        reimbAuthor
+        reimbDescription,
+        reimbAuthorId
     }
 
     console.log(ticket)
@@ -30,12 +30,11 @@ async function addReimbFunc() {
             body: JSON.stringify(ticket),
             credentials: "include"
         })
-
+        console.log(resp);
         if (resp.status === 201) {
-            console.log(resp);
             document.getElementById("adding-row").innerText = "The ticket was made! Please wait for approval!";
         } else {
-            document.getElementById("login-row").innerText = `Server Error. Responded with ${res.status} code.`;
+            document.getElementById("login-row").innerText = `Server Error. Responded with ${resp.status} code.`;
         }
 
     } catch (e) {
@@ -46,7 +45,7 @@ async function addReimbFunc() {
 
 }
 
-async function findReimbFunch() {
+async function findReimbFunc() {
     console.log("finding a users reibursements function has started...")
     let userId = document.getElementById("userId").value;
 
@@ -60,7 +59,7 @@ async function findReimbFunch() {
 
         if (resp.status === 200) {
             const data = await resp.json();
-
+            console.log('\n\nfind all:', data);
             addDataToTable(data);
 
         } else {
@@ -74,9 +73,6 @@ function addDataToTable(data) {
     try {
         //Get table body
         const oldTableBody = document.getElementById("tableBody");
-        //Clear the current the data in the table body
-        // tableBody.remove();
-        
         
         //Create new body
         const newTableBody = document.createElement("tbody");
@@ -86,15 +82,17 @@ function addDataToTable(data) {
 
         //Iterate data array
         for (let i = 0; i < data.length; i++) {
+            //Get current record
             let record = data[i];
+
             //For each element in the array..
             //Create a row
             const row = document.createElement("tr");
 
             //And then create a cell <td> for each property
-            const rowNumberCell = document.createElement("td");
-            rowNumberCell.innerHTML = i + 1;
-            row.appendChild(rowNumberCell);
+            const idCell = document.createElement("td");
+            idCell.innerHTML = record.reimbId;
+            row.appendChild(idCell);
 
             const amountCell = document.createElement("td");
             amountCell.innerHTML = record.reimbAmount;
@@ -105,11 +103,15 @@ function addDataToTable(data) {
             row.appendChild(descCell);
 
             const userCell = document.createElement("td");
-            userCell.innerHTML = record.reimbAuthorId.userId;
+            if (record.reimbAuthorId) {
+                userCell.innerHTML = record.reimbAuthorId.userId;
+            }
             row.appendChild(userCell);
 
             const reimbResolverIdCell = document.createElement("td");
-            reimbResolverIdCell.innerHTML = record.reimbResolverId.userId;
+            if (record.reimbResolverId) {
+                reimbResolverIdCell.innerHTML = record.reimbResolverId.userId;
+            }
             row.appendChild(reimbResolverIdCell);
 
             const submittedCell = document.createElement("td");
@@ -128,11 +130,6 @@ function addDataToTable(data) {
             typeCell.innerHTML = record.reimbType.reimbType;
             row.appendChild(typeCell);
 
-            //Append each cell to row
-            // row.appendChild(rowNumberCell).appendChild(amountCell).appendChild(descCell).appendChild(userCell).appendChild(reimbResolverIdCell)
-            //     .appendChild(submittedCell).appendChild(resolvedCell).appendChild(statusCell).appendChild(typeCell);
-
-            console.log("Row with tds:", row);
             document.getElementById('tableBody').appendChild(row);
         }
 

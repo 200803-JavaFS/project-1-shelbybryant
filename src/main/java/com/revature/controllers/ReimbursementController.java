@@ -66,7 +66,7 @@ public class ReimbursementController {
 		System.out.println("new reimbursement" + newReimb);
 		
 		if (rs.addRequest(newReimb)) {
-			res.setStatus(200);
+			res.setStatus(201);
 			res.getWriter().println("Reimbursement was created");
 		} else {
 			res.setStatus(403);
@@ -135,7 +135,7 @@ public class ReimbursementController {
 		System.out.println(reimb);
 		
 		if (rs.updateReimb(reimb)) {
-			res.setStatus(201);
+			res.setStatus(202);
 			res.getWriter().println("Reimbursement was updated");
 		} else {
 			res.setStatus(403);

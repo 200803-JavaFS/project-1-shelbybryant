@@ -28,6 +28,15 @@ public class ReimbursementDTO {
 		this.reimbDescription = reimbDescription;
 		this.reimbType = reimbType;
 	}
+	
+	public ReimbursementDTO(int reimbAuthorId, double reimbAmount, String reimbDescription,
+			String reimbType) {
+		super();
+		this.reimbAuthorId = reimbAuthorId;
+		this.reimbAmount = reimbAmount;
+		this.reimbDescription = reimbDescription;
+		this.reimbType = reimbType;
+	}
 
 
 

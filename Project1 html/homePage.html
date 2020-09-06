@@ -17,10 +17,10 @@
 	<div class="container">
 
 		<div class="jumbotron" style="background-color: #b7d7e8;">
-			<h1 class="display-4">Home Page</h1>
-			<p class="lead">This is the Dunder Mifflin Scranton Branch reimbursement home page! </p>
+			<h1 class="display-4 text-center">Home Page</h1>
+			<p class="lead text-center">This is the Dunder Mifflin Scranton Branch reimbursement home page! </p>
 			<hr class="my-3">
-			<p>If you have any troubles or questions, feel free to email David Wallace.</p>
+			<p class="text-center">If you have any troubles or questions, feel free to email David Wallace.</p>
 
 			<div class="row">
 				<div class="col-sm-6">
@@ -37,51 +37,56 @@
 						<div class="card-body">
 							<h5 class="card-title">Manager Portal</h5>
 							<p class="card-text">Access the manager portal by clicking the button below.</p>
-							<button type="button" class="btn btn-primary" data-toggle="modal"
-								data-target="#managerPortalModal">
-								Access Portal
+							<a href="managerPortal.html" class="btn btn-primary">Access Portal</a>
 							</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="modal fade" id="managerPortalModal" tableindex="-1" aria-labelledby="managerPortalModal" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Manager Portal</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<p>This takes you to the manager portal!</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<!-- <button type="button" class="btn btn-primary">Go to portal</button> -->
-					<a href="managerPortal.html" class="btn btn-primary">Go</a>
+		<div class="card-deck">
+			<div class="card">
+				<img class="card-img-top" src="https://comedycentral.mtvnimages.com/images/shows/The_Office/Season3/the_office_03_023_act1.jpg" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">Beach Day</h5>
+					<p class="card-text">Our branch enjoyed a nice day at the beach. The "Funtivities" included a hot dog eating contest and running over hot coals!</p>
+					<p class="card-text"><small class="text-muted">Quote from mister Kevin Malone: "I just want to lie on the beach and eat hot dogs. That's all I've ever wanted."</small></p>
 				</div>
 			</div>
+			<div class="card">
+				<img height="350" class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/af/Threat-Level-Midnight.jpg/250px-Threat-Level-Midnight.jpg" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">Shout out for the week!</h5>
+					<p class="card-text">The shout out for the week goes to our very own, Michael Scott! He wrote his own film, "Threat Level Midnight!" One employee said it was so good, "You should enter it in festivals!"</p>
+					<p class="card-text"><small class="text-muted">"There's a whole crowd of people out there, who need to learn how to do the Scarn"</small></p>
+				</div>
+			</div>
+			<div class="card">
+				<img class="card-img-top" src="https://theofficeanalytics.files.wordpress.com/2017/11/dwight.jpeg?w=1200" alt="Card image cap">
+				<div class="card-body">
+				  <h5 class="card-title">Shrute Announcements</h5>
+				  <p class="card-text">There will be a fire drill conducted this Friday at 12pm. Since we do not want a repeat of our last fire drill, there will be a supervisor to over-see this drill.</p>
+				  <p class="card-text"><small class="text-muted">Again, this is just a drill. No real fires will be occurring during this.</small></p>
+				</div>
+			  </div>
 		</div>
-	</div>
 
 
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-		crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-		crossorigin="anonymous"></script>
+
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+			integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+			crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+			integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+			crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+			integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+			crossorigin="anonymous"></script>
 </body>
 
 </html>

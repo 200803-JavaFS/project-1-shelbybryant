@@ -19,11 +19,31 @@
       <div class="container">
         <h1 class="display-4 text-center">Employee Portal</h1>
         <p class="lead text-center">You made it to the employee portal, nice!</p>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Go to Home Page</h5>
+                <p class="card-text">Go back to the home page by clicking the button below.</p>
+                <a href="homePage.html" class="btn btn-primary">Go Back</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Logout</h5>
+                <p class="card-text">If you're all done for today, please click the button below.</p>
+                <a href="logout.html" class="btn btn-primary">Click to leave</a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <br>
-    <br>
-
+    
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-body" style="background-color: #b7d7e8;">
@@ -50,6 +70,7 @@
                 <br>
                 <button id="addbtn" type="button" class="btn btn-primary">Add Ticket!</button>
                 <div class="row" id="login-row"></div>
+                <div class="row" id="adding-row"></div>
               </div>
             </div>
         </div>
@@ -57,7 +78,6 @@
       </div>
     </div>
 
-    <br>
 
 
     <div class="card" style="background-color: #b7d7e8;">
@@ -75,7 +95,7 @@
       <table class="table" style="background-color: white;">
         <thead id="tableHead">
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">ID</th>
             <th scope="col">Amount</th>
             <th scope="col">Description</th>
             <th scope="col">User ID</th>
@@ -91,15 +111,10 @@
         </tbody>
       </table>
 
-
-
     </div>
-
-
-
-
-    <br><br><br>
-  </div>
+    <br><br><br><br>
+    
+  </div><!-- End of CONTAINER -->
 
 
 

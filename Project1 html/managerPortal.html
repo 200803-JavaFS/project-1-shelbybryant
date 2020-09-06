@@ -1,44 +1,155 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Manager Portal</title>
-  </head>
-  <body style="background-color: #b7d7e8;">
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4 text-center">Manager Portal</h1>
-          <p class="lead text-center">You made it to the manager portal, coolio!</p>
-        </div>
-      </div> 
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-      <div class="row" id="table-row">
-        <table class="table-hover table-bordered" id="reimbtable">
-            <thead>
-                <tr>
-                    <th>Reimbursement Id</th>
-                    <th>Reimbursement Amount</th>
-                    <th>Reimbursement Description</th>
-                    <th>Reimbursement Author Id</th>
-                    <th>Reimbursement Type</th>
-                    <th>Reimbursement Status</th>
-                </tr>
-            </thead>
-            <tbody id="reimbbody"></tbody>
-        </table>
-      <button id="findAll" class="btn btn-success">Find All Reimbursements</button>
-    </div>
+	<title>Manager Portal</title>
+</head>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  </body>
+<body style="background-color: #15384e;">
+	<div class="container">
+		<div class="jumbotron jumbotron-fluid" style="background-color: #b7d7e8;">
+			<div class="container">
+				<h1 class="display-4 text-center">Manager Portal</h1>
+				<p class="lead text-center">You made it to the manager portal, coolio!</p>
+
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">Go to Home Page</h5>
+								<p class="card-text">Go back to the home page by clicking the button below.</p>
+								<a href="homePage.html" class="btn btn-primary">Go Back</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">Logout</h5>
+								<p class="card-text">If you're all done for today, please click the button below.</p>
+								<a href="logout.html" class="btn btn-primary">Click to leave</a>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div> <!-- END OF JUMBOTRON-->
+
+		<div class="card" style="background-color: #b7d7e8;">
+			<h3 class="text-center card-title">View Reimbursements</h3>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-md">
+						<button id="findAllBtn" type="button" class="btn btn-primary">View All</button>
+						<br><br>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">Find by Status ID</span>
+							</div>
+							<input type="text" id="statusId" class="form-control" placeholder="Status Id"
+								aria-label="Username" aria-describedby="basic-addon1">
+							<div class="input-group-append">
+								<button class="btn btn-primary" type="button" id="findByStatusBtn">View</button>
+							</div>
+							<p class="lead">1 = pending, 2 = approved, 3 = denied</p>
+						</div>
+
+						<!-- <form>
+              <div class="form-group">
+                <label for="statusId">Reimbursement Status Id</label>
+                <input type="text" class="form-control" id="statusId" aria-describedby="statusIdInput">
+              </div>
+              <button id="findByStatusbtn" type="button" class="btn btn-primary">View By Status</button>
+              
+            </form> -->
+					</div>
+					<div class="col-md">
+
+					</div>
+				</div>
+
+			</div>
+
+			<table class="table" style="background-color: white;">
+				<thead id="tableHead">
+					<tr>
+						
+						<th scope="col">ID</th>
+						<th scope="col">Amount</th>
+						<th scope="col">Description</th>
+						<th scope="col">User ID</th>
+						<th scope="col">Resolver ID</th>
+						<th scope="col">Submitted</th>
+						<th scope="col">Resolved</th>
+						<th scope="col">Status</th>
+						<th scope="col">Type</th>
+					</tr>
+				</thead>
+				<tbody id="tableBody">
+
+				</tbody>
+			</table>
+		</div> <!-- END OF VIEW REIMBURSEMENTS CARD-->
+
+		<br><br>
+		<div class="card" style="background-color: #b7d7e8;">
+			<h4 class="text-center card-title">Update Reimbursement Status</h4>
+			<div class="card-body">
+				<form>
+
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="inputCity">Reimbursement ID</label>
+							<input type="text" class="form-control" id="reimbIdInput">
+						</div>
+						<div class="form-group col-md-4">
+							<label for="inputState">Status</label>
+							<select id="statusSelect" class="form-control">
+								<option selected>Choose...</option>
+								<option>approved</option>
+								<option>denied</option>
+							</select>
+						</div>
+						<div class="form-group col-md-2">
+							<label for="inputZip">Resolver ID</label>
+							<input type="text" class="form-control" id="resolverIdInput">
+						</div>
+					</div>
+					<button type="button" id="updateStatusBtn" class="btn btn-primary">Update</button>
+					<h6 id="responseMessage"></h6>
+				</form>
+			</div>
+		</div>
+
+		<br><br><br>
+
+	</div>
+	<!--END OF CONTAINER -->
+
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+	<script src="managerPortal.js"></script>
+</body>
+
 </html>
