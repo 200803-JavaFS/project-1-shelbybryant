@@ -88,7 +88,6 @@ function addDataToTable(data) {
         for (let i = 0; i < data.length; i++) {
             let record = data[i];
             //For each element in the array..
-
             //Create a row
             const row = document.createElement("tr");
 
