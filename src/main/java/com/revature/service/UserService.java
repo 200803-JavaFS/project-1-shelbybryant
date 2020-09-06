@@ -39,4 +39,9 @@ public class UserService {
 		return uDao.getByUsername(username);
 	}
 	
+	public boolean deleteUser(int id) {
+		log.info("Deleting user with id of " + id);
+		return uDao.deletById(id);
+	}
+	
 }

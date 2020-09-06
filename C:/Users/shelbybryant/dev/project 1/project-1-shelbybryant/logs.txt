@@ -15,3 +15,217 @@
 2020-09-04 23:19:40 INFO  UserService:22 - Getting the user by the user id of 3
 2020-09-04 23:20:38 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
 2020-09-04 23:20:42 INFO  ReimbursementService:53 - Updating reimbursement: Reimbursement [reimbId=1, reimbAmount=50.5, reimbDescription=Traveled for a work conference, reimbAuthorId=User [userId=2, username=shelbers, password=password, firstName=Shelby, lastName=Bryant, email=shelbers@gmail.com], reimbResolverId=User [userId=1, username=obers, password=theforce, firstName=Obi, lastName=Wan, email=theforce@gmail.com], reimbSubmitted=2020-09-03 00:03:49.733156, reimbResolved=2020-09-03 11:38:57.408, reimbStatus=ReimbursementStatus [reimbStatusId=2, reimbStatus=approved], reimbType=ReimbursementType [reimbTypeId=1, reimbType=travel]]
+2020-09-05 15:31:11 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 15:31:16 INFO  ReimbStatusService:17 - Finding ReimbStatus with status: 1
+2020-09-05 15:36:13 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 15:36:16 INFO  ReimbStatusService:17 - Finding ReimbStatus with status: 1
+2020-09-05 15:41:40 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 15:41:44 INFO  ReimbStatusService:17 - Finding ReimbStatus with status: 1
+2020-09-05 15:48:19 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 15:48:22 INFO  ReimbStatusService:17 - Finding ReimbStatus with status: 1
+2020-09-05 15:48:48 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 15:48:52 INFO  ReimbStatusService:17 - Finding ReimbStatus with status: 1
+2020-09-05 15:51:48 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 15:51:51 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 2
+2020-09-05 15:51:51 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 15:51:51 INFO  ReimbStatusService:17 - Finding ReimbStatus with status: 1
+2020-09-05 15:52:47 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 15:52:51 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 2
+2020-09-05 15:52:51 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 16:01:08 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 16:01:11 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 2
+2020-09-05 16:01:11 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 16:03:56 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 16:03:59 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 2
+2020-09-05 16:03:59 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 16:12:55 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 16:13:45 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 16:14:50 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 16:15:30 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 16:16:50 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 16:18:10 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 16:19:05 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 16:20:18 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 16:24:06 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 16:26:18 INFO  ReimbursementService:38 - Finding the reimbursement by the status id of 1
+2020-09-05 16:27:09 INFO  ReimbTypeService:15 - Finding the reimbursements with a status id of 3
+2020-09-05 16:36:31 INFO  ReimbursementService:58 - Finding the reimbursement with the type id of 3
+2020-09-05 16:38:02 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 16:38:06 INFO  ReimbursementService:43 - Getting all the reimbursements by the author of 1
+2020-09-05 16:46:25 INFO  ReimbursementService:21 - Getting all the reimbursements!
+2020-09-05 16:46:29 INFO  UserService:28 - Adding a new User User [userId=5, username=usernametest, password=password, firstName=firstName, lastName=lastName, email=email]
+2020-09-05 16:46:29 INFO  ReimbursementService:38 - Finding the reimbursement by the status id of 1
+2020-09-05 16:46:29 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 16:46:29 INFO  ReimbursementService:43 - Getting all the reimbursements by the author of 1
+2020-09-05 16:46:29 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 16:46:29 INFO  ReimbursementService:53 - Updating reimbursement: Reimbursement [reimbId=1, reimbAmount=150.5, reimbDescription=Traveled for a work conference, reimbAuthorId=User [userId=2, username=shelbers, password=password, firstName=Shelby, lastName=Bryant, email=shelbers@gmail.com], reimbResolverId=User [userId=1, username=obers, password=theforce, firstName=Obi, lastName=Wan, email=theforce@gmail.com], reimbSubmitted=2020-09-03 00:03:49.733156, reimbResolved=2020-09-03 11:38:57.408, reimbStatus=ReimbursementStatus [reimbStatusId=2, reimbStatus=approved], reimbType=ReimbursementType [reimbTypeId=1, reimbType=travel]]
+2020-09-05 16:46:29 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 16:46:29 INFO  UserService:33 - Updating User User [userId=1, username=obers, password=theforce, firstName=Obi, lastName=Wan, email=obiwan@gmial.com]
+2020-09-05 16:46:29 INFO  ReimbursementService:58 - Finding the reimbursement with the type id of 3
+2020-09-05 16:46:29 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 16:46:29 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 16:46:29 INFO  UserService:17 - Getting all Users
+2020-09-05 16:46:29 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 17:03:49 INFO  ReimbursementService:21 - Getting all the reimbursements!
+2020-09-05 17:03:52 INFO  UserService:28 - Adding a new User User [userId=6, username=usernametest2, password=password, firstName=firstName, lastName=lastName, email=Testemail]
+2020-09-05 17:03:52 INFO  ReimbursementService:38 - Finding the reimbursement by the status id of 1
+2020-09-05 17:03:53 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 17:03:53 INFO  ReimbursementService:43 - Getting all the reimbursements by the author of 1
+2020-09-05 17:03:53 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 3
+2020-09-05 17:03:53 INFO  ReimbursementService:53 - Updating reimbursement: Reimbursement [reimbId=3, reimbAmount=150.5, reimbDescription=description, reimbAuthorId=User [userId=3, username=username, password=password, firstName=firstName, lastName=lastName, email=email], reimbResolverId=null, reimbSubmitted=2020-09-04 23:14:51.087, reimbResolved=2020-09-04 23:14:51.087, reimbStatus=ReimbursementStatus [reimbStatusId=1, reimbStatus=pending], reimbType=ReimbursementType [reimbTypeId=1, reimbType=travel]]
+2020-09-05 17:03:53 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 17:03:53 INFO  UserService:33 - Updating User User [userId=1, username=obers, password=theforce, firstName=Obi, lastName=Wan, email=obiwan@gmial.com]
+2020-09-05 17:03:53 INFO  ReimbursementService:58 - Finding the reimbursement with the type id of 3
+2020-09-05 17:03:53 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 17:03:53 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 17:03:53 INFO  ReimbStatusService:17 - Finding ReimbStatus with status: 1
+2020-09-05 17:03:53 INFO  UserService:17 - Getting all Users
+2020-09-05 17:03:53 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 17:10:52 INFO  ReimbursementService:21 - Getting all the reimbursements!
+2020-09-05 17:10:56 INFO  UserService:28 - Adding a new User User [userId=0, username=nando, password=password, firstName=Fernando, lastName=Flores, email=nando@gmail.com]
+2020-09-05 17:10:56 INFO  ReimbursementService:38 - Finding the reimbursement by the status id of 1
+2020-09-05 17:10:56 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 17:10:56 INFO  ReimbursementService:43 - Getting all the reimbursements by the author of 1
+2020-09-05 17:10:56 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 3
+2020-09-05 17:10:56 INFO  ReimbursementService:53 - Updating reimbursement: Reimbursement [reimbId=3, reimbAmount=150.5, reimbDescription=description, reimbAuthorId=User [userId=3, username=username, password=password, firstName=firstName, lastName=lastName, email=email], reimbResolverId=null, reimbSubmitted=2020-09-04 23:14:51.087, reimbResolved=2020-09-04 23:14:51.087, reimbStatus=ReimbursementStatus [reimbStatusId=1, reimbStatus=pending], reimbType=ReimbursementType [reimbTypeId=1, reimbType=travel]]
+2020-09-05 17:10:56 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 17:10:56 INFO  UserService:33 - Updating User User [userId=1, username=obers, password=theforce, firstName=Obi, lastName=Wan, email=obiwan@gmial.com]
+2020-09-05 17:10:56 INFO  ReimbursementService:58 - Finding the reimbursement with the type id of 3
+2020-09-05 17:10:56 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 17:10:56 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 17:10:56 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 17:10:56 INFO  UserService:17 - Getting all Users
+2020-09-05 17:10:57 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 17:18:27 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 17:18:31 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 17:18:53 INFO  UserService:28 - Adding a new User User [userId=0, username=nando, password=password, firstName=Fernando, lastName=Flores, email=nando@gmail.com]
+2020-09-05 17:18:56 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 17:18:56 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 17:19:31 INFO  UserService:28 - Adding a new User User [userId=0, username=nando, password=password, firstName=Fernando, lastName=Flores, email=nando@gmail.com]
+2020-09-05 17:19:35 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 17:19:35 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 17:20:57 INFO  UserService:28 - Adding a new User User [userId=0, username=nando, password=password, firstName=Fernando, lastName=Flores, email=nando@gmail.com]
+2020-09-05 17:21:00 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 17:21:00 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 17:22:22 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 17:22:43 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 17:22:43 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 17:22:44 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 17:23:01 INFO  UserService:28 - Adding a new User User [userId=0, username=nando, password=password, firstName=Fernando, lastName=Flores, email=nando@gmail.com]
+2020-09-05 17:23:05 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 17:23:05 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 17:23:05 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 17:24:09 INFO  UserService:28 - Adding a new User User [userId=0, username=nando, password=password, firstName=Fernando, lastName=Flores, email=nando@gmail.com]
+2020-09-05 17:24:13 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 17:24:13 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 17:24:13 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 17:26:44 INFO  UserService:28 - Adding a new User User [userId=0, username=nando, password=password, firstName=Fernando, lastName=Flores, email=nando@gmail.com]
+2020-09-05 17:26:48 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 17:26:48 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 17:26:48 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 17:29:00 INFO  UserService:28 - Adding a new User User [userId=0, username=nando, password=password, firstName=Fernando, lastName=Flores, email=nando@gmail.com]
+2020-09-05 17:29:03 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 17:29:03 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 17:29:03 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 17:32:32 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 17:32:32 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 17:32:32 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 17:40:26 INFO  UserService:28 - Adding a new User User [userId=0, username=nando1, password=password1, firstName=Fernando, lastName=Flores, email=nando1@gmail.com]
+2020-09-05 17:40:29 INFO  UserService:38 - Getting the user with the username of nando1
+2020-09-05 17:40:29 INFO  UserService:43 - Deleting user with id of 14
+2020-09-05 17:40:29 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 17:40:30 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 17:40:30 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 17:43:54 INFO  UserService:28 - Adding a new User User [userId=0, username=nando1, password=password1, firstName=Fernando, lastName=Flores, email=nando1@gmail.com]
+2020-09-05 17:43:57 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 17:43:58 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 17:43:58 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 17:45:53 INFO  UserService:38 - Getting the user with the username of nando1
+2020-09-05 17:45:56 INFO  UserService:43 - Deleting user with id of 14
+2020-09-05 17:45:56 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 17:45:56 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 17:45:56 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 17:49:40 INFO  UserService:38 - Getting the user with the username of nando1
+2020-09-05 17:49:44 INFO  UserService:43 - Deleting user with id of 14
+2020-09-05 17:49:44 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 17:49:44 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 17:49:44 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 18:00:47 INFO  ReimbursementService:63 - Deleting the reimb with an id of 17
+2020-09-05 18:00:47 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 18:02:09 INFO  ReimbursementService:63 - Deleting the reimb with an id of 17
+2020-09-05 18:02:09 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 18:08:15 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 18:08:15 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 18:08:15 INFO  ReimbursementService:63 - Deleting the reimb with an id of 18
+2020-09-05 18:08:15 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 18:16:15 INFO  ReimbursementService:63 - Deleting the reimb with an id of 18
+2020-09-05 18:16:19 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 18:16:19 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 18:16:44 INFO  ReimbursementService:63 - Deleting the reimb with an id of 18
+2020-09-05 18:17:00 INFO  ReimbursementService:63 - Deleting the reimb with an id of 19
+2020-09-05 18:18:03 INFO  ReimbursementService:63 - Deleting the reimb with an id of 19
+2020-09-05 18:19:28 INFO  ReimbursementService:63 - Deleting the reimb with an id of 19
+2020-09-05 19:04:33 INFO  ReimbursementService:63 - Deleting the reimb with an id of 19
+2020-09-05 19:05:16 INFO  ReimbursementService:63 - Deleting the reimb with an id of 19
+2020-09-05 19:38:57 INFO  ReimbursementService:63 - Deleting the reimb with an id of 19
+2020-09-05 19:40:44 INFO  ReimbursementService:63 - Deleting the reimb with an id of 19
+2020-09-05 19:40:49 INFO  ReimbursementService:21 - Getting all the reimbursements!
+2020-09-05 19:40:50 INFO  UserService:28 - Adding a new User User [userId=0, username=nando2, password=password1, firstName=Fernando, lastName=Flores, email=nando2@gmail.com]
+2020-09-05 19:40:50 INFO  ReimbursementService:38 - Finding the reimbursement by the status id of 1
+2020-09-05 19:40:50 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 19:40:50 INFO  ReimbursementService:43 - Getting all the reimbursements by the author of 1
+2020-09-05 19:40:50 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 3
+2020-09-05 19:40:50 INFO  ReimbursementService:53 - Updating reimbursement: Reimbursement [reimbId=3, reimbAmount=150.5, reimbDescription=description, reimbAuthorId=User [userId=3, username=username, password=password, firstName=firstName, lastName=lastName, email=email], reimbResolverId=null, reimbSubmitted=2020-09-04 23:14:51.087, reimbResolved=2020-09-04 23:14:51.087, reimbStatus=ReimbursementStatus [reimbStatusId=1, reimbStatus=pending], reimbType=ReimbursementType [reimbTypeId=1, reimbType=travel]]
+2020-09-05 19:40:50 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 19:40:50 INFO  UserService:33 - Updating User User [userId=1, username=obers, password=theforce, firstName=Obi, lastName=Wan, email=obiwan@gmial.com]
+2020-09-05 19:40:50 INFO  ReimbursementService:58 - Finding the reimbursement with the type id of 3
+2020-09-05 19:40:51 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 19:40:51 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 19:40:51 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 19:40:51 INFO  UserService:17 - Getting all Users
+2020-09-05 19:40:51 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 19:42:21 INFO  ReimbursementService:21 - Getting all the reimbursements!
+2020-09-05 19:42:27 INFO  UserService:28 - Adding a new User User [userId=0, username=nando2, password=password1, firstName=Fernando, lastName=Flores, email=nando2@gmail.com]
+2020-09-05 19:42:27 INFO  ReimbursementService:38 - Finding the reimbursement by the status id of 1
+2020-09-05 19:42:28 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 19:42:28 INFO  ReimbursementService:43 - Getting all the reimbursements by the author of 1
+2020-09-05 19:42:28 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 3
+2020-09-05 19:42:28 INFO  ReimbursementService:53 - Updating reimbursement: Reimbursement [reimbId=3, reimbAmount=150.5, reimbDescription=description, reimbAuthorId=User [userId=3, username=username, password=password, firstName=firstName, lastName=lastName, email=email], reimbResolverId=null, reimbSubmitted=2020-09-04 23:14:51.087, reimbResolved=2020-09-05 19:40:50.772, reimbStatus=ReimbursementStatus [reimbStatusId=1, reimbStatus=pending], reimbType=ReimbursementType [reimbTypeId=1, reimbType=travel]]
+2020-09-05 19:42:28 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 19:42:28 INFO  UserService:33 - Updating User User [userId=1, username=obers, password=theforce, firstName=Obi, lastName=Wan, email=obiwan@gmial.com]
+2020-09-05 19:42:28 INFO  ReimbursementService:58 - Finding the reimbursement with the type id of 3
+2020-09-05 19:42:28 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 19:42:28 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 19:42:28 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 19:42:28 INFO  UserService:17 - Getting all Users
+2020-09-05 19:42:28 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 19:49:33 INFO  ReimbursementService:21 - Getting all the reimbursements!
+2020-09-05 19:49:39 INFO  UserService:28 - Adding a new User User [userId=0, username=nando2, password=password1, firstName=Fernando, lastName=Flores, email=nando2@gmail.com]
+2020-09-05 19:49:39 INFO  ReimbursementService:38 - Finding the reimbursement by the status id of 1
+2020-09-05 19:49:40 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 19:49:40 INFO  ReimbursementService:43 - Getting all the reimbursements by the author of 1
+2020-09-05 19:49:40 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 3
+2020-09-05 19:49:40 INFO  ReimbursementService:53 - Updating reimbursement: Reimbursement [reimbId=3, reimbAmount=150.5, reimbDescription=description, reimbAuthorId=User [userId=3, username=username, password=password, firstName=firstName, lastName=lastName, email=email], reimbResolverId=null, reimbSubmitted=2020-09-04 23:14:51.087, reimbResolved=2020-09-05 19:40:50.772, reimbStatus=ReimbursementStatus [reimbStatusId=1, reimbStatus=pending], reimbType=ReimbursementType [reimbTypeId=1, reimbType=travel]]
+2020-09-05 19:49:40 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 19:49:40 INFO  UserService:33 - Updating User User [userId=1, username=obers, password=theforce, firstName=Obi, lastName=Wan, email=obiwan@gmial.com]
+2020-09-05 19:49:40 INFO  ReimbursementService:58 - Finding the reimbursement with the type id of 3
+2020-09-05 19:49:40 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 19:49:40 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 19:49:40 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 19:49:40 INFO  UserService:17 - Getting all Users
+2020-09-05 19:49:40 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-05 19:58:43 INFO  ReimbursementService:21 - Getting all the reimbursements!
+2020-09-05 19:58:49 INFO  UserService:28 - Adding a new User User [userId=0, username=nando2, password=password1, firstName=Fernando, lastName=Flores, email=nando2@gmail.com]
+2020-09-05 19:58:49 INFO  ReimbursementService:38 - Finding the reimbursement by the status id of 1
+2020-09-05 19:58:49 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 19:58:49 INFO  ReimbursementService:43 - Getting all the reimbursements by the author of 1
+2020-09-05 19:58:49 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 3
+2020-09-05 19:58:49 INFO  ReimbursementService:53 - Updating reimbursement: Reimbursement [reimbId=3, reimbAmount=150.5, reimbDescription=description, reimbAuthorId=User [userId=3, username=username, password=password, firstName=firstName, lastName=lastName, email=email], reimbResolverId=null, reimbSubmitted=2020-09-04 23:14:51.087, reimbResolved=2020-09-05 19:40:50.772, reimbStatus=ReimbursementStatus [reimbStatusId=1, reimbStatus=pending], reimbType=ReimbursementType [reimbTypeId=1, reimbType=travel]]
+2020-09-05 19:58:49 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-05 19:58:49 INFO  UserService:33 - Updating User User [userId=1, username=obers, password=theforce, firstName=Obi, lastName=Wan, email=obiwan@gmial.com]
+2020-09-05 19:58:49 INFO  ReimbursementService:58 - Finding the reimbursement with the type id of 3
+2020-09-05 19:58:50 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 19:58:50 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-05 19:58:50 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-05 19:58:50 INFO  UserService:17 - Getting all Users
+2020-09-05 19:58:50 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1

@@ -56,8 +56,8 @@ public class ReimbursementDAO {
 	}
 	
 	public List<Reimbursement> selectByStatus(int statusId) {
-		Session ses=HibernateUtil.getSession();
-		List<Reimbursement> reimbList = ses.createQuery("from Reimbursement where reimbStatus ="+statusId, Reimbursement.class).list();
+		Session session = HibernateUtil.getSession();
+		List<Reimbursement> reimbList = session.createQuery("from Reimbursement where reimbStatus ="+statusId, Reimbursement.class).list();
 		return reimbList;
 	}
 	
@@ -68,4 +68,28 @@ public class ReimbursementDAO {
 		author.getUserId(), Reimbursement.class).list();
 		return list;
 	}
+	
+	public List<Reimbursement> selectByTypeId (int id) {
+		Session session = HibernateUtil.getSession();
+		List<Reimbursement> reimbList = session.createQuery("from Reimbursement where reimbType =" + id, Reimbursement.class).list();
+		return reimbList;
+	}
+//	
+//	public boolean deleteReimbursement (int id) {
+//		Session session = HibernateUtil.getSession();
+//		Transaction tx = session.beginTransaction();
+//		
+//		try {
+//			session.delete(findById(id));
+//			tx.commit();
+//			return true;
+//		}catch (HibernateException e) {
+//			e.printStackTrace();
+//			tx.rollback();
+//			return false;
+//		} finally {
+//			HibernateUtil.closeSession();
+//		}
+//		
+//	}
 }

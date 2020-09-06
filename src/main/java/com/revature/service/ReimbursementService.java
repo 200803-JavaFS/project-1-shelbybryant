@@ -53,4 +53,14 @@ public class ReimbursementService {
 		log.info("Updating reimbursement: " + reimb);
 		return rDao.updateReimbursement(reimb);
 	}
+	
+	public List<Reimbursement> findByTypeId(int id) {
+		log.info("Finding the reimbursement with the type id of " + id);
+		return rDao.selectByTypeId(id);
+	}
+	
+//	public boolean deleteRequest (int id) {
+//		log.info("Deleting the reimb with an id of " + id);
+//		return rDao.deleteReimbursement(id);
+//	}
 }

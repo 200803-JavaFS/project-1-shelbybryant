@@ -66,7 +66,7 @@ public class MasterServlet extends HttpServlet{
 					System.out.println("in reimbursements");
 					if (portions.length == 2) {
 						int id = Integer.parseInt(portions[1]);
-						rc.findByAuthorId(res, id);
+						rc.getReimbById(res, id);;
 					} else {
 						rc.getAllReimb(res);
 					}

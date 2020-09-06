@@ -150,7 +150,31 @@ public class ReimbursementController {
 		res.getWriter().println(json);
 	}
 	
+	public void getReimbById(HttpServletResponse res, int id) throws IOException{
+		Reimbursement reimb = rs.findById(id);
+		
+		if (reimb == null) {
+			res.setStatus(204);
+		} else {
+			res.setStatus(200);
+			String json = om.writeValueAsString(reimb);
+			res.getWriter().println(json);
+		}
+	}
 	
+//	public void deleteReimb (HttpServletResponse res, int id) throws IOException {
+//		Reimbursement reimb = rs.findById(id);
+//		System.out.println(reimb);
+//		
+//		if (rs.deleteRequest(id)) {
+//			res.setStatus(200);
+//			res.getWriter().println("The reimbursement was deleted");
+//		} else {
+//			res.setStatus(204);
+//		}
+//		
+//		
+//	}
 	
 	
 	
