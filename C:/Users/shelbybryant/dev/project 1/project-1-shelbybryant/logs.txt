@@ -229,3 +229,18 @@
 2020-09-05 19:58:50 INFO  ReimbursementService:28 - Adding the reimbursement ticket
 2020-09-05 19:58:50 INFO  UserService:17 - Getting all Users
 2020-09-05 19:58:50 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1
+2020-09-08 11:40:17 INFO  ReimbursementService:21 - Getting all the reimbursements!
+2020-09-08 11:40:30 INFO  UserService:28 - Adding a new User User [userId=0, username=nando2, password=password1, firstName=Fernando, lastName=Flores, email=nando2@gmail.com]
+2020-09-08 11:40:30 INFO  ReimbursementService:38 - Finding the reimbursement by the status id of 1
+2020-09-08 11:40:30 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-08 11:40:30 INFO  ReimbursementService:43 - Getting all the reimbursements by the author of 1
+2020-09-08 11:40:31 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 3
+2020-09-08 11:40:31 INFO  ReimbursementService:53 - Updating reimbursement: Reimbursement [reimbId=3, reimbAmount=150.5, reimbDescription=graphic design classes, reimbAuthorId=User [userId=4, username=pamster, password=doodles, firstName=Pam, lastName=Halpert, email=artlover@gmail.com], reimbResolverId=null, reimbSubmitted=2020-09-06 21:54:04.792883, reimbResolved=null, reimbStatus=ReimbursementStatus [reimbStatusId=1, reimbStatus=pending], reimbType=ReimbursementType [reimbTypeId=4, reimbType=other]]
+2020-09-08 11:40:31 INFO  UserService:22 - Getting the user by the user id of 1
+2020-09-08 11:40:31 INFO  UserService:33 - Updating User User [userId=1, username=obers, password=theforce, firstName=Obi, lastName=Wan, email=obiwan@gmial.com]
+2020-09-08 11:40:31 INFO  ReimbursementService:58 - Finding the reimbursement with the type id of 3
+2020-09-08 11:40:31 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-08 11:40:31 INFO  UserService:22 - Getting the user by the user id of 2
+2020-09-08 11:40:31 INFO  ReimbursementService:28 - Adding the reimbursement ticket
+2020-09-08 11:40:31 INFO  UserService:17 - Getting all Users
+2020-09-08 11:40:31 INFO  ReimbursementService:48 - Retrieving reimbursement with the id of: 1

@@ -107,13 +107,6 @@ public class Tests {
 		
 	}
 	
-//	@Test
-//	public void deleteReimbTest() {
-//		boolean reimbWasDeleted = rs.deleteRequest(19);
-//		System.out.println("/n/n====================/n/n REIMB DELETED BOOLEAN" + reimbWasDeleted);
-//		assertTrue(reimbWasDeleted);
-//	}
-	
 	
 	//did fine running by itself but not with group
 	@Test
@@ -122,11 +115,6 @@ public class Tests {
 		boolean userAdd = us.addUser(testUser);
 		System.out.println("\n\n-----------------\n\nUSER ADD BOOLEAN: " + userAdd);
 		assertTrue(userAdd);
-		
-		User userToRemove = us.getByUsername("nando1");
-		boolean userWasDeleted = us.deleteUser(userToRemove.getUserId());
-		System.out.println("\n\n-----------------\n\nUSER was deleted... BOOLEAN: " + userWasDeleted);
-		assertTrue(userWasDeleted);
 	}
 
 	//this one works
@@ -159,7 +147,7 @@ public class Tests {
 		User u = us.findById(id);
 		//changing/updating the email
 		//will need to change again after testing if it works before presenting
-		u.setEmail("obiwan@gmial.com");
+		u.setEmail("theforce@gmail.com");
 		boolean newUser = us.updateUser(u);
 		assertTrue(newUser);
 	}
